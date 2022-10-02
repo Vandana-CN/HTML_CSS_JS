@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+   
+        <h1 style="background-color:rgb(99, 157, 251); text-align: center; color: aliceblue;">The RGB Color Guessing Game
+            <br>
+            <span id="colorDisplay">RGB</span>
+        </h1>
+   
+    
+    
+    <div style="height: 60px;text-align: center;" id="stripe">
+
+        <span style="font-size: 40px;font-weight: bold; color: rgb(99, 157, 251);">Guess the color - </span>
+        <span  style="font-size: 40px;font-weight: bold; color: rgb(83, 249, 119);"id="random"> Random Number</span>
+        <br>
+        <span style="font-size: 40px;font-weight: bold; color: rgb(247, 81, 81);" id="message"></span>
+
+        
+    </div>
+        <div style="margin: 10px auto; margin-top: 60px; margin-left: 478px;
+
+        max-width: 400px;" id="container">
+           
+            <button style="background-color:#005c99; border:none; border-radius: 10px; ;width: 100px;height: 40px;" onclick="fun('#005c99')"></button>
+            <button style="background-color:#ff9933; border:none; border-radius: 10px;width: 100px;height: 40px;" onclick="fun('#ff9933')"></button>
+            <button style="background-color:#ffff33; border:none; border-radius: 10px;width: 100px;height: 40px;" onclick="fun('#ffff33')"></button>
+            <button style="background-color:#99ff33; border:none; border-radius: 10px;width: 100px;height: 40px;" onclick="fun('#99ff33')"></button>
+            <button style="background-color:#33ff99; border:none;border-radius: 10px;width: 100px;height: 40px;" onclick="fun('#33ff99')"></button>
+            <button style="background-color:#33ffff; border:none;border-radius: 10px;width: 100px;height: 40px;" onclick="fun('#33ffff')"></button>
+            <button style="background-color:#3399ff; border:none;border-radius: 10px;width: 100px;height: 40px;" onclick="fun('#3399ff')"></button>
+            <button style="background-color:#9933ff; border:none;border-radius: 10px;width: 100px;height: 40px;" onclick="fun('#9933ff')"></button>
+            <button style="background-color:#ff33ff; border:none;border-radius: 10px;width: 100px;height: 40px;" onclick="fun('#ff33ff')"></button>
+            <button style="background-color:#ff3399; border:none;border-radius: 10px;width: 100px;height: 40px;" onclick="fun('#ff3399')"></button>
+            <button style="background-color:#ff0040; border:none;border-radius: 10px;width: 100px;height: 40px;" onclick="fun('#ff0040')"></button>
+            <button style="background-color:#b3003b; border:none;border-radius: 10px;width: 100px;height: 40px;" onclick="fun('#b3003b')"></button>
+            
+        </div>
+
+
+<script>
+
+    
+
+    const arr = ["#005c99","#ff9933","#ffff33","#99ff33","#33ff99","#33ffff","#3399ff","#9933ff","#ff33ff","#ff3399","#ff0040","#b3003b"];
+    console.log(arr);
+    const random_index = Math.floor(Math.random() * arr.length);
+    const random = arr[random_index];
+    console.log(random);
+
+    document.getElementById("random").innerHTML = random;
+    
+    var inc = 0;
+
+function fun(a)
+{
+   
+  inc++;
+
+    if(a===random)
+  {
+
+    document.getElementById("message").innerHTML = "Hurray!!! You Won";
+    setTimeout(function(){
+    window.location.reload();
+    }, 3000);
+  }
+  else
+  {
+    switch(inc) {
+  case 1:
+  
+    document.getElementById("message").innerHTML = "Oops!!! 2 tries left";
+    break;
+  case 2:
+ 
+    document.getElementById("message").innerHTML = "Oops!!! 1 tries left";
+    break;
+  default:
+  
+    document.getElementById("message").innerHTML = "Oops!!! You Lost";
+}
+
+}
+
+
+}
+
+</script>
+</body>
+</html>
